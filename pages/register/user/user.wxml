@@ -1,0 +1,34 @@
+<view class="user-header">
+    <image src="./../../images/touxiang.jpg"></image>
+    <p>{{name}}</p>
+    <ul class="user-ul">
+        <li>
+            <i>0</i>
+            <p>收藏的宝贝</p>
+        </li>
+        <li>
+            <i>0</i>
+            <p>收藏的店铺</p>
+        </li>
+        <li>
+             <i>0</i>
+            <p>优惠券</p>
+        </li>
+        <li>
+           <i>0</i>
+            <p>收货地址</p>
+        </li>
+    </ul>
+</view>
+<view>
+    <ul class="user-list">
+        <li>
+            <image src="./../../images/allbook.png"></image>
+            <p>全部订单</p>
+        </li>
+        <li>
+            <image src="./../../images/waitpay.png"></image>
+            <p>待付款</p>
+        </li>
+    </ul>
+</view>

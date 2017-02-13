@@ -1,0 +1,37 @@
+page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx; }
+  page scroll-view {
+    flex: 1; }
+    page scroll-view .header {
+      height: 860rpx; }
+      page scroll-view .header swiper-item {
+        height: 860rpx;
+        overflow: hidden; }
+        page scroll-view .header swiper-item image {
+          height: 1056rpx; }
+    page scroll-view .goodsInfo {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      color: #424242; }
+      page scroll-view .goodsInfo view {
+        width: 100%;
+        font-size: 32rpx; }
+        page scroll-view .goodsInfo view.goodsName {
+          height: 40rpx;
+          padding-top: 30rpx;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; }
+        page scroll-view .goodsInfo view.desc {
+          margin-top: 38rpx;
+          color: #424242;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; }
+  page .detail-footbar {
+    height: 116rpx;
+    background: #FF3366; }

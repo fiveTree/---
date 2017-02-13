@@ -1,0 +1,87 @@
+<scroll-view style="height: 100%;" scroll-y="true" scroll-top="{{scrollTop.scroll_top}}" bindscroll="scrollTopFun">  
+<view class="header">
+  <image src="../../img/logo1.png"></image>
+  <input value="毛呢外套" type="text" />
+  <view class="chatIcon">
+  </view>
+</view>
+<view class="banner">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="imgUrls{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="kindList">
+  <scroll-view scroll-x="true">
+    <ul>
+      <li>
+        <image src="../../img/new.png"></image>
+      </li>
+      <li>
+        <image src="../../img/sale.png"></image>
+      </li>
+      <li>
+        <image src="../../img/official.png"></image>
+      </li>
+      <li>
+        <image src="../../img/dress.png"></image>
+      </li>
+      <li>
+        <image src="../../img/fashion.png"></image>
+      </li>
+    </ul>
+  </scroll-view>
+</view>
+<view class="section bigPictures">
+  <view class="picturesItem" wx:for="{{picturesItems}}" wx:for-index="index1" wx:key="picturesItems{{index}}">
+    <view class="titleBox">
+      <image src="{{item.image.pic_url}}"></image>
+      <view class="mask"></view>
+      <view class="userName">
+        <image src="{{item.uinfo.avatar}}"></image>
+        <view>{{item.uinfo.nickname}}</view>
+      </view>
+      <p class="f-title">{{item.subtitle}}</p>
+      <p class="s-title">{{item.total}}款商品></p>
+    </view>
+    <scroll-view class="goodsList" scroll-x="true">
+      <ul>
+        <li wx:for="{{item.twitters}}" wx:for-item="item2" bindtap="toDetail" data-goodsid="{{index1}}" wx:key="twitters{{index}}">
+        
+          <image src="{{item2.show_pic}}"></image>
+          <view>{{item2.goods_title}}</view>
+          <p>￥{{item2.goods_price}}</p>
+         
+        </li>
+      </ul>
+    </scroll-view>
+  </view>
+</view>
+<view class="section hotLIst">
+  <ul class="tab">
+    <li class="{{currentIndex=='0'?'active':''}}" bindtap="changeList1">默认</li>
+    <li class="{{currentIndex=='1'?'active':''}}" bindtap="changeList2">最新</li>
+    <li class="{{currentIndex=='2'?'active':''}}" bindtap="changeList3">精选</li>
+  </ul>
+  <ul class="proList">
+    <li wx:for="{{proList}}" bindtap="toDetail" data-goodsid="3"  wx:key="proList{{index}}">
+      <image src="{{item.show_pic}}"></image>
+      <view class="title">{{item.goods_title}}</view>
+      <view class="goods_info">
+        <view class="price_info">￥{{item.goods_price}}</view>
+        <view class="fav_num">
+          <i class="icon"></i>
+          {{item.stock}}
+        </view>
+      </view>
+    </li>
+    
+  </ul>
+</view>
+
+
+</scroll-view>
+<view wx:if="{{scrollTop.goTop_show}}" class="goTop" bindtap="goTop"></view>

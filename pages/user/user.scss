@@ -1,0 +1,130 @@
+@charset "utf-8";
+$baseColor: #FF3366;
+page {
+    height: 100%;
+    .user {
+
+        background: #eee;
+        height: 100%;
+        .user-header {
+            width: 750rpx;
+            height: 376rpx;
+            padding-top: 30rpx;
+            position: relative;
+            background: -webkit-linear-gradient(left, #ff5448 0%,#fea255 100%);
+            .userPhoto {
+                padding: 5rpx;
+                background: $baseColor;
+                margin: 0 auto;
+                border-radius: 50%;
+                width: 100rpx;
+                height: 100rpx;
+                image {
+                    width: 100rpx;
+                    height: 100rpx;
+
+                    display: block;
+                    border-radius: 50%;
+                }
+            }
+
+            p {
+                width: 100%;
+                text-align: center;
+                color: #fff;
+                display: block;
+                margin-top: 20rpx;
+            }
+        }
+        .user-ul {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-top: 4rpx solid #ff956f;
+            display: flex;
+            width: 750rpx;
+
+            li {
+                height: 150rpx;
+                display: flex;
+                flex-direction: column;
+                font-size: 28rpx;
+                flex: 1;
+                color: #fff;
+
+                p {
+                    margin-top: 0;
+                    text-align: center;
+                }
+
+                i {
+                    text-align: center;
+                    display: block;
+                    width: 100%;
+                    font-size: 30rpx;
+                    margin-top: 30rpx;
+                    margin-bottom: 10rpx;
+                }
+                &:nth-child(2) {
+                    border-right: 4rpx solid #ff956f;
+                }
+
+            }
+            li:nth-child(3) {
+                margin-right: 50rpx;
+                margin-left: 20rpx;
+            }
+        }
+        .user-list {
+            width: 100%;
+            padding: 10rpx 0;
+            display: flex;
+            font-size: 28rpx;
+            color: #333;
+            background: #fff;
+            li {
+                flex: 1;
+                height: 100%;
+
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                image {
+                    width: 40rpx;
+                    height: 40rpx;
+                    display: block;
+                    margin: 20rpx 0;
+
+                }
+                &.active{
+                    color:$baseColor;
+                }
+            }
+
+        }
+    }
+    .login{
+        height:100%;
+        background: #eee;
+        .tip{
+            font-size: 32rpx;
+            color:#666;
+            text-align: center;
+            margin-top: 400rpx;
+        }
+        .toLogin{
+            position: absolute;
+           
+           margin-left:10%;
+            bottom: 300rpx;
+            background: $baseColor;
+            width:80%;
+            height:80rpx;
+            color:#fff;
+            font-size: 36rpx;
+            font-weight: 900;
+        }
+    }
+
+}

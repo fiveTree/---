@@ -1,0 +1,256 @@
+<scroll-view scroll-y="true" scroll-top="{{scrollTop.scroll_top}}" bindscroll="scrollTopFun"     scroll-into-view="tab">
+
+  <!--banner-->
+  <swiper class="header" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="changeNum">
+    <swiper-item wx:for="{{detailInfo.itemInfo.topImages}}" wx:for-item="topImages" wx:key="topImages{{index}}">
+      <image src="{{topImages}}"></image>
+    </swiper-item>
+    <view class="swiper-page">
+      <span class="currentPageNum">{{currentNum}}</span>  /
+      <span class="total">{{detailInfo.itemInfo.topImages.length}}</span> 
+    </view>
+  </swiper>
+
+  <!--商品信息-->
+  <view class="goodsInfo">
+    <view class="goodsName">
+      {{detailInfo.itemInfo.title}}
+    </view>
+    <view class="desc">
+      {{detailInfo.itemInfo.desc}} {{detailInfo.itemInfo.desc}}
+    </view>
+    <view class="price">
+      <span class="now">{{detailInfo.itemInfo.price}}</span> 
+      <span class="market">{{detailInfo.itemInfo.oldPrice}}</span> 
+      <span class="discount">{{detailInfo.itemInfo.discountDesc}}</span> 
+    </view>
+    <view class="other">
+      <span>{{detailInfo.columns[0]}}</span> 
+      <span>{{detailInfo.columns[1]}}</span> 
+      <span>{{detailInfo.columns[2]}}</span> 
+    </view>
+    <view class="proInfo" wx:if="{{false}}">
+      <span class="shopAction"><i></i>全店铺满2件打9.50折</span> 
+      <span class="more">更多 ></span> 
+    </view>
+  </view>
+
+  <!--店家信息-->
+  <view class="shop" id="tab">
+
+    <!--头部-->
+    <view class="border"></view>
+    <view class="shopInfo">
+      <image src="{{detailInfo.shopInfo.shopLogo}}"></image>
+      <view class="info-content">
+        <p class="title">{{detailInfo.shopInfo.name}}</p>
+        <p class="count">
+          <span>总销量 {{detailInfo.shopInfo.cSells}}</span> 
+          <span>全部宝贝 {{detailInfo.shopInfo.cGoods}}</span> 
+        </p>
+      </view>
+      <navigator class="goShop" url="">
+      </navigator>
+    </view>
+    <view class="shop-evaluate">
+      <ul>
+        <li wx:for="{{detailInfo.shopInfo.score}}" wx:for-item="score" wx:key="score{{index}}">
+          <span>{{score.name}}</span> 
+          <em>{{score.score}}</em> 
+          <i>{{score.isBetter?"高":"低"}}</i>
+        </li>
+      </ul>
+    </view>
+
+    <!--提供服务-->
+    <view class="shop-services">
+      <ul>
+        <li wx:for="{{detailInfo.shopInfo.services}}" wx:for-item="services" wx:key="services{{index}}">
+          <image src="{{services.icon}}"></image>
+          <span>{{services.name}}</span> 
+        </li>
+      </ul>
+    </view>
+  </view>
+
+  <!--详情页面 详情 评价 etc-->
+  <view class="detail-tabpanel">
+
+    <!--头部-->
+    <view class="border"></view>
+
+    <!--tab-->
+    <view class="tab" >
+      <nav >
+        <li class="{{currentIndex==0?'active':''}}" bindtap="active0"><span>图文详情</span>  </li>
+        <li bindtap="active1" class="{{currentIndex==1?'active':''}}" ><span>商品参数</span>  </li>
+        <li bindtap="active2" class="{{currentIndex==2?'active':''}}" >
+        <span>评价({{detailInfo.rate.cRate}})</span>
+        </li>
+        <li bindtap="active3" class="{{currentIndex==3?'active':''}}"><span>热卖推荐</span>  </li>
+      </nav>
+    </view>
+
+    <!--切换面板-->
+    <view class="panel-items">
+
+      <!--图文详情-->
+      <view class="panel-item">
+        <view class="desc title">
+          <span class="start"><i></i></span> 
+          <span class="text">{{detailInfo.detailInfo.desc}}</span> 
+          <span class="end"><i></i></span> 
+        </view>
+        <view class="pics" wx:for="{{detailInfo.detailInfo.detailImage}}" wx:for-item="picItem" wx:key="picItem{{index}}">
+          <view class="title">{{picItem.key}}</view>
+          <view class="pic">
+            <image wx:for="{{picItem.list}}" wx:for-item="pic" src="{{pic}}" mode="widthFix" wx:key="pic{{index}}"></image>
+          </view>
+        </view>
+      </view>
+
+      <!--商品参数-->
+      <view class="panel-item">
+        <view class="border"></view>
+        <view class="title">商品参数</view>
+
+        <!--尺码-->
+        <view class="param-rule">
+          <ul>
+            <li wx:for="{{detailInfo.itemParams.rule.tables[0]}}" wx:for-item="rule" wx:key="rule{{index}}">
+              <span wx:for="{{rule}}" wx:for-item="ruleItem" wx:key="ruleItem{{index}}">{{ruleItem}}</span> 
+            </li>
+          </ul>
+        </view>
+
+        <!--参数-->
+        <view class="param-info">
+          <ul>
+            <li wx:for="{{detailInfo.itemParams.info.set}}" wx:for-item="info" wx:key="info{{index}}">
+              <span>{{info.key}}</span> 
+              <span>{{info.value}}</span> 
+            </li>
+          </ul>
+        </view>
+      </view>
+
+      <!--评价-->
+      <view class="panel-item">
+        <view class="border"></view>
+        <view class="title">购买评价<span class="more">更多 ></span>  </view>
+        <view class="rates-list">
+          <view class="rates-item" wx:for="{{detailInfo.rate.list}}" wx:for-item="rate" wx:key="rate{{index}}">
+            <view class="rates-userInfo">
+              <image src="{{rate.user.avatar}}"></image>
+              <span>{{rate.user.uname}}</span> 
+            </view>
+            <view class="rate-cont">
+              {{rate.content}}
+            </view>
+            <view class="rate-attr">
+              <span class="time">{{rate.createdDate}}</span> 
+              <span class="sku">{{rate.style}}</span> 
+            </view>
+            <view class="rate-shop">
+              {{rate.explain}}
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!--热卖推荐-->
+      <view class="panel-item">
+        <view class="border"></view>
+        <view class="title">热卖推荐</view>
+        <ul class="proList">
+          <li wx:for="{{proList}}" wx:key="{{index}}">
+            <image src="{{item.show_pic}}"></image>
+            <view class="title">{{item.goods_title}}</view>
+            <view class="goods_info">
+              <view class="price_info">￥{{item.goods_price}}</view>
+              <view class="fav_num">
+                <i class="icon"></i>
+                {{item.stock}}
+              </view>
+            </view>
+          </li>
+        </ul>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<!--底部购物车导航-->
+<view class="detail-footbar" wx:if="{{!isShow}}" >
+    <!--客服-->
+    <view class="footbar-im">
+      <i class="iconfont"></i>
+      <span class="text">客服</span>
+    </view>
+    <!--店铺-->
+    <view class="footbar-shop">
+      <i class="iconfont"></i>
+      <span class="text">店铺</span>
+    </view>
+    <!--收藏-->
+    <view class="footbar-fav">
+      <i class="iconfont"></i>
+      <span class="text">收藏</span>
+    </view>
+    <!--购买-->
+    <view class="footbar-buy">
+      <span class="buy-cart" bindtap="showAddCart">加入购物车</span>
+      <span class="buy-now" bindtap="toOrder">购买</span>
+    </view>
+</view>
+
+<view wx:if="{{scrollTop.goTop_show}}" class="goTop" bindtap="goTop"></view>
+
+  <view class="goCart" bindtap="goCart" url="" open-type="switchTab">
+    <i class="cartNum">{{cartNum}}</i>
+  </view>
+
+
+  <!--商品选择-->
+<view class="goods-sku" wx:if="{{isShow}}">
+    <view class="content">
+        <view class="sku-title">
+          <image src="http://s2.mogucdn.com/p2/161208/1492306463_74k7d87d8hfc759k835ak6l0d0k5g_640x900.jpg_100x100.jpg"></image>
+          <view class="sku-title-desc">
+            <view class="sku-title-text">{{detailInfo.skuInfo.title}}</view>
+            <view class="sku-title-price">
+              <span class="price">{{detailInfo.skuInfo.priceRange}}</span>
+              <span class="sku-stock">库存{{detailInfo.skuInfo.totalStock}}件</span>
+            </view>
+            <view class="sku-title-addon">请选择{{detailInfo.skuInfo.sizeKey}}、{{detailInfo.skuInfo.styleKey}}</view>
+             <span class="close" bindtap="closeAddCart">╳</span>
+          </view>
+        </view>
+        <scroll-view class="scroll" scroll-y="true">
+        <view class="sku-list">
+         <dl >
+            <dt>{{detailInfo.skuInfo.props[0].label}}</dt>
+            <dd>
+              <text class="{{listIndex==propsIndex0?'active':''}}" wx:for="{{detailInfo.skuInfo.props[0].list}}" wx:for-item="list" wx:for-index="listIndex" wx:key="list{{listIndex}}" data-index="{{listIndex}}" data-label="{{detailInfo.skuInfo.props[0].label}}" data-name="{{list.name}}" bindtap="choseProps0">{{list.name}}</text>
+            </dd>
+          </dl>
+        <dl  >
+            <dt>{{detailInfo.skuInfo.props[1].label}}</dt>
+            <dd>
+              <text class="{{listIndex==propsIndex1?'active':''}}" wx:for="{{detailInfo.skuInfo.props[1].list}}" wx:for-item="list" wx:for-index="listIndex" wx:key="list{{listIndex}}" data-index="{{listIndex}}" data-label="{{detailInfo.skuInfo.props[1].label}}" data-name="{{list.name}}" bindtap="choseProps1">{{list.name}}</text>
+            </dd>
+          </dl>
+        </view>
+         <view class="sku-num">
+            <p class="title">数量：</p>
+            <view class="sku-counter">
+              <span class="num-reduce" bindtap="numReduce">-</span>
+              <span class="num-input">{{cartInfo.num}}</span>
+              <span class="num-add" bindtap="numAdd">+</span>
+            </view>
+         </view>
+        </scroll-view>
+        <view class="action">
+          <button class="addCart" bindtap="addCart">确定</button>
+        </view>
+    </view>
+</view>

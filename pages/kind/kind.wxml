@@ -1,0 +1,45 @@
+<scroll-view style="height: 100%;" scroll-y="true">
+  <view class="header">
+    <image src="../../img/logo1.png"></image>
+    <input value="毛呢外套" type="text" />
+    <view class="chatIcon">
+    </view>
+  </view>
+  <view class="section allKind">
+    <image src="http://s16.mogucdn.com/p2/160902/upload_8f08e2a43gch3k70d9abfcbdd7bcg_750x98.png_750x999.v1c7E.70.webp"></image>
+  </view>
+  <view class="allKindList">
+    <ul>
+      <li wx:for="{{allKindList}}" data-title="{{item.title}}" wx:key="title{{index}}">
+        <image src="{{item.image}}"></image>
+      </li>
+    </ul>
+  </view>
+  <view class="category-sale">
+    <view class="saleTop">
+      <image src="http://s16.mogucdn.com/p2/160902/upload_0019l9a7geh10e34ca98153h3hakg_750x98.png_750x999.v1c7E.70.webp"></image>
+    </view>
+    <view class="saleList">
+      <view class="saleItem" wx:for="{{sale}}" wx:for-item="item1" wx:key="sale{{index}}">
+
+        <view class="itemTitle">
+          <p>{{item1.img[0].title}}</p>
+          <navigator url="">查看更多 ></navigator>
+        </view>
+        <view class="saleImages">
+          <view class="bigImage">
+            <image src="{{item1.img[0].image}}"></image>
+          </view>
+          <ul class="images">
+            <li wx:for="{{item1.img}}" wx:for-item="item2" wx:if="{{index==0||index>4?fasle:'true'}}" wx:key="images{{index}}">
+              <image src="{{item2.image}}"></image>
+            </li>
+             
+          </ul>
+        </view>
+
+
+      </view>
+    </view>
+  </view>
+</scroll-view>

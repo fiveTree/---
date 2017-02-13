@@ -1,0 +1,57 @@
+1、安装mockjs
+	cnpm install mockjs
+2、创建一个mock.js
+	var Mock = require("mockjs");
+	var Random = require('mockjs/src/mock/random');//随机生成图片时使用
+	
+	var data = Mock.mock({
+		"banner|4":[{
+			"title":"@title",//@title占位符，表示会在该位置生成随机字符串
+			"src":Random.image('320x150', '#4A7BF7', '@str')
+		}]
+	})
+	
+	console.log(JSON.stringify(data,null,4))
+	
+	
+	在控制台输入 node mock.js,输出如下内容
+	
+	{
+    "banner": [
+        {
+            "title": "Umdnulcj Lzjgpm Pkvnezybl Wjdath",
+            "src": "http://dummyimage.com/320x150/4A7BF7&text=2&b^s"
+        },
+        {
+            "title": "Ztlawofd Kcwil Oclf Rdvrgpe Fnkdewm Crk Bfbtrlqv",
+            "src": "http://dummyimage.com/320x150/4A7BF7&text=1!t"
+        },
+        {
+            "title": "Elgouljqs Pdyc Lhhiai Hiihrqe",
+            "src": "http://dummyimage.com/320x150/4A7BF7&text=bukak&"
+        },
+        {
+            "title": "Aclyswt Wpvd Kqr Snpo Pthjqpnu Qnlk",
+            "src": "http://dummyimage.com/320x150/4A7BF7&text=7ZH"
+        }
+    ]
+	}
+	
+新建一个banner.json
+	将上述数据复制进去即可
+	
+4、直接调用mock生成数据
+	mock.js 做出修改如下
+	var Mock = require("mockjs");
+	var Random = require('mockjs/src/mock/random');//随机生成图片时使用
+	
+	var data = Mock.mock("zz1611/mockTest",{
+		"banner|4":[{
+			"title":"@title",//@title占位符，表示会在该位置生成随机字符串
+			"src":Random.image('320x150', '#4A7BF7', '@str')
+		}]
+	})
+	
+
+5、在ajax请求时，我们将url写为"zz1611/mockTest"即可
+	当与后端进行联调时，直接将我们的url更换即可

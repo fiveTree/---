@@ -1,0 +1,53 @@
+<view wx:if="{{islogin}}" class="cart-top">
+  <p>您还未登陆，请前往<span bindtap="toLogin">登陆</span>  </p>
+</view>
+<view wx:else class="cart-list">
+  <scroll-view scroll-y="true" style="height:100%">
+    <view class="proList" wx:for="{{shopCart}}" wx:for-item="list" wx:key="{{index}}">
+      <view  class="pro-list-top">
+        <view class="pro-list-span"></view>
+        <view class="pro-list-view">
+          <span>店铺：{{list.shopName}}</span> 
+          <span>合计：<i>￥{{singleprice}}</i></span> 
+          <span bindtap="viewChange" data-num="1" class="{{num==1?'':'bg1'}}"></span> 
+        </view>
+      </view>
+      <view wx:if="{{isShow?true:false}}"class="pro-list-bottom">
+        <view class="{{list==1?'pro-list-span':'pro-list-span-empty'}}" bindtap="bgChange" data-list="1"></view>
+        <view>
+          <image src="{{list.goodImg}}"></image>
+          <view>
+            <p>{{list.goodName}} </p>
+            <p> 
+                <span>款式：{{list['款式']}}</span> 
+                <span>尺码：{{list['尺码']}}</span> 
+            </p>
+            <p>
+                <span class="rec" bindtap="rec">-</span> 
+                <span class="num" bindchange="num">{{list.num}}</span> 
+                <span class="add" bindtap="add">+</span> 
+            </p>
+          </view>
+        </view>
+        <view>
+          <span>{{list.price}}</span> 
+          <span>{{list.oldPrice}}</span> 
+          <span class="del"></span> 
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="cart-footer">
+    <view>
+         <view bindtap="allpick"  class="{{pick==1?'pro-list-span':'pro-list-span-empty'}}" data-pick="1"></view>
+         <p >全选</p>
+     </view>
+     <view>
+        <p>合计：<i>￥696.00</i></p>
+        <p>不含运费、优惠扣减</p>
+     </view>
+     <view>
+        <span>去结算</span>
+     </view>
+  </view>
+</view>

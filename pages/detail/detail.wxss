@@ -1,0 +1,590 @@
+@charset "UTF-8";
+.border {
+  height: 20rpx;
+  width: 100%;
+  background-color: #eaeaea; }
+
+page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 32rpx;
+  font-family: "微软雅黑";
+  position: relative; }
+  page scroll-view {
+    height: 100%;
+    margin-bottom: 140rpx; }
+    page scroll-view .header {
+      height: 860rpx;
+      position: relative; }
+      page scroll-view .header swiper-item {
+        height: 860rpx;
+        overflow: hidden; }
+        page scroll-view .header swiper-item image {
+          height: 1056rpx; }
+      page scroll-view .header .swiper-page {
+        position: absolute;
+        bottom: 20rpx;
+        right: 20rpx;
+        color: #fff;
+        font-size: 20rpx;
+        border-radius: 18px;
+        padding: 4rpx 15rpx;
+        background: rgba(0, 0, 0, 0.5); }
+    page scroll-view .goodsInfo {
+      display: flex;
+      flex-direction: column;
+      color: #424242;
+      width: 100%; }
+      page scroll-view .goodsInfo view {
+        width: 90%;
+        padding: 0 5%;
+        font-size: 32rpx;
+        text-align: center; }
+        page scroll-view .goodsInfo view.goodsName {
+          height: 40rpx;
+          margin-top: 30rpx;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; }
+        page scroll-view .goodsInfo view.desc {
+          margin-top: 20rpx;
+          color: #999;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; }
+        page scroll-view .goodsInfo view.price {
+          margin-top: 24rpx;
+          display: flex;
+          justify-content: center; }
+          page scroll-view .goodsInfo view.price span {
+            font-size: 28rpx; }
+            page scroll-view .goodsInfo view.price span.now {
+              font-size: 44rpx;
+              color: #f36; }
+            page scroll-view .goodsInfo view.price span.market {
+              margin: 14rpx 0 0 15rpx;
+              color: #999;
+              text-decoration: line-through; }
+            page scroll-view .goodsInfo view.price span.discount {
+              margin-left: 15rpx;
+              height: 32rpx;
+              line-height: 32rpx;
+              padding: 0 12rpx;
+              color: #fff;
+              font-size: 22rpx;
+              background: #ec312d;
+              -webkit-border-radius: 20rpx;
+              -moz-border-radius: 20rpx;
+              border-radius: 20rpx; }
+        page scroll-view .goodsInfo view.other {
+          display: flex;
+          margin: 20rpx 0 15rpx;
+          font-size: 28rpx; }
+          page scroll-view .goodsInfo view.other span {
+            flex: 1;
+            border-right: 2rpx solid #eee; }
+            page scroll-view .goodsInfo view.other span:last-child {
+              border: 0 none; }
+        page scroll-view .goodsInfo view.proInfo {
+          width: 100%;
+          padding: 0;
+          height: 80rpx;
+          line-height: 80rpx;
+          background: #fafafa;
+          border-top: 2rpx solid #eee;
+          border-bottom: 2rpx solid #eee;
+          display: flex;
+          justify-content: space-between; }
+          page scroll-view .goodsInfo view.proInfo span {
+            margin: 0 40rpx; }
+    page scroll-view .shop {
+      display: flex;
+      flex-direction: column; }
+      page scroll-view .shop view.border {
+        height: 20rpx;
+        width: 100%;
+        background-color: #eaeaea; }
+      page scroll-view .shop view.shopInfo {
+        display: flex;
+        margin-top: 40rpx;
+        padding: 0 30rpx;
+        position: relative; }
+        page scroll-view .shop view.shopInfo image {
+          width: 90rpx;
+          height: 90rpx;
+          border: 2rpx solid #eee;
+          margin-right: 20rpx; }
+        page scroll-view .shop view.shopInfo .info-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column; }
+          page scroll-view .shop view.shopInfo .info-content p {
+            line-height: 32rpx;
+            color: #000; }
+            page scroll-view .shop view.shopInfo .info-content p:last-child {
+              margin-top: 20rpx; }
+            page scroll-view .shop view.shopInfo .info-content p span {
+              color: #999;
+              font-size: 24rpx;
+              margin-left: 15rpx; }
+              page scroll-view .shop view.shopInfo .info-content p span:nth-child(1) {
+                margin: 0; }
+        page scroll-view .shop view.shopInfo navigator.goShop {
+          float: right;
+          position: absolute;
+          right: 20rpx;
+          top: 20rpx;
+          z-index: 2;
+          background: url("http://s16.mogucdn.com/p1/160605/idid_ifrtcnlcgq3dcn3ghazdambqhayde_200x60.png") no-repeat;
+          background-size: auto 60rpx;
+          width: 200rpx;
+          height: 65rpx;
+          line-height: 65rpx;
+          -webkit-border-radius: 4rpx;
+          -moz-border-radius: 4rpx;
+          border-radius: 4rpx;
+          color: #666; }
+      page scroll-view .shop view.shop-evaluate {
+        width: 100%; }
+        page scroll-view .shop view.shop-evaluate ul {
+          display: flex;
+          width: 100%;
+          margin: 30rpx 0; }
+          page scroll-view .shop view.shop-evaluate ul li {
+            flex: 1;
+            text-align: center;
+            font-size: 28rpx; }
+            page scroll-view .shop view.shop-evaluate ul li span {
+              color: #666; }
+            page scroll-view .shop view.shop-evaluate ul li em {
+              color: #f13e3a;
+              margin-left: 10rpx; }
+            page scroll-view .shop view.shop-evaluate ul li i {
+              padding: 0 4rpx;
+              line-height: 24rpx;
+              margin-left: 10rpx;
+              color: #f6f6f6;
+              font-size: 24rpx;
+              border-radius: 4rpx;
+              background: #f13e3a; }
+      page scroll-view .shop view.shop-services {
+        border-top: 2rpx solid #e5e5e5; }
+        page scroll-view .shop view.shop-services ul {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 30rpx; }
+          page scroll-view .shop view.shop-services ul li {
+            width: 50%;
+            display: flex;
+            margin-top: 20rpx; }
+            page scroll-view .shop view.shop-services ul li image {
+              width: 44rpx;
+              height: 44rpx; }
+            page scroll-view .shop view.shop-services ul li span {
+              flex: 1;
+              line-height: 44rpx;
+              margin-left: 10rpx;
+              color: #666;
+              font-size: 24rpx; }
+    page scroll-view .detail-tabpanel {
+      display: flex;
+      flex-direction: column;
+      width: 100%; }
+      page scroll-view .detail-tabpanel .tab {
+        display: flex;
+        width: 100%;
+        height: 71rpx;
+        margin-top: 20rpx; }
+        page scroll-view .detail-tabpanel .tab nav {
+          width: 100%;
+          display: flex;
+          margin-top: 20rpx;
+          border-bottom: 2rpx solid #eee; }
+          page scroll-view .detail-tabpanel .tab nav li {
+            flex: 1;
+            text-align: center;
+            font-size: 28rpx;
+            line-height: 28rpx;
+            box-sizing: border-box; }
+            page scroll-view .detail-tabpanel .tab nav li span {
+              display: block;
+              width: 100%;
+              border-right: 2rpx solid #eee; }
+            page scroll-view .detail-tabpanel .tab nav li:last-child span {
+              border: 0 none; }
+            page scroll-view .detail-tabpanel .tab nav li.active {
+              color: #f13e3a;
+              border-bottom: 2rpx solid #f13e3a; }
+      page scroll-view .detail-tabpanel .panel-items {
+        display: block;
+        color: #333;
+        font-size: 30rpx; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item .desc {
+          padding: 20rpx 5%; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item .desc span {
+            display: block; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item .desc span.end, page scroll-view .detail-tabpanel .panel-items .panel-item .desc span.start {
+              width: 180rpx;
+              height: 2rpx;
+              background: #a3a3a5;
+              position: relative; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item .desc span.start {
+              float: left; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item .desc span.end {
+              float: right; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item .desc span.text {
+              padding: 30rpx 0;
+              color: #727272;
+              font-size: 28rpx; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item .desc span i {
+              display: inline-block;
+              width: 10rpx;
+              height: 10rpx;
+              background: #000;
+              border-radius: 10rpx;
+              position: absolute;
+              top: -5rpx; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item .pics {
+          width: 100%;
+          padding: 20rpx 5%; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item .pics .title {
+            font-size: 32rpx;
+            line-height: 40rpx;
+            padding: 20rpx; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item .pics .pic image {
+            display: block; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .title {
+          font-size: 32rpx;
+          line-height: 40rpx;
+          padding: 20rpx;
+          line-height: 30rpx;
+          padding: 40rpx 5% 30rpx; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-info,
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-rule {
+          width: 90%;
+          padding: 20rpx 5% 0; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-info ul,
+          page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-rule ul {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-weight: 400;
+            line-height: 76rpx;
+            text-align: left;
+            color: #727272; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-info ul li,
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-rule ul li {
+              display: flex;
+              border-bottom: 2rpx solid #f4f4f4; }
+              page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-info ul li span,
+              page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-rule ul li span {
+                width: 25%; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-info ul li {
+          border-bottom: 2rpx solid #f4f4f4; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(2) .param-info ul li span:last-child {
+            color: #eb4868;
+            flex: 1; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .title {
+          width: 90%;
+          padding: 20rpx 5%; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .title span.more {
+            float: right;
+            font-size: 24rpx; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list {
+          width: 90%;
+          padding: 20rpx 5% 0;
+          display: flex;
+          flex-direction: column; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item {
+            margin: 20rpx 0;
+            border-top: 2rpx solid #eee;
+            display: flex;
+            flex-direction: column; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rates-userInfo {
+              display: flex; }
+              page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rates-userInfo image {
+                width: 82rpx;
+                height: 82rpx;
+                border: 2rpx solid #efefef;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%; }
+              page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rates-userInfo span {
+                margin-left: 20rpx;
+                color: #424242;
+                font-size: 30rpx;
+                line-height: 82rpx; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rate-cont {
+              line-height: 34rpx;
+              margin-top: 10rpx;
+              color: #727272;
+              font-size: 28rpx; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rate-attr {
+              line-height: 24rpx;
+              margin-top: 15rpx; }
+              page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rate-attr span {
+                color: #999;
+                font-size: 24rpx; }
+                page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rate-attr span:last-child {
+                  margin-left: 15rpx; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(3) .rates-list .rates-item .rate-shop {
+              border-top: 2rpx dotted #d9d9d9;
+              margin-top: 30rpx;
+              padding-top: 22rpx;
+              line-height: 40rpx;
+              color: #999;
+              font-size: 28rpx; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) view.title {
+          width: 90%;
+          padding: 20rpx 5%; }
+        page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList {
+          border-top: 2rpx solid #d9d9d9;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          width: 100%; }
+          page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList li {
+            width: 48%;
+            margin: 12rpx 1% 0;
+            display: flex;
+            flex-direction: column;
+            font-size: 22rpx; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList li image {
+              height: 480rpx;
+              width: 100%; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList li .title {
+              margin-top: 18rpx;
+              padding: 0;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              text-align: center;
+              height: 34rpx;
+              color: #666; }
+            page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList li .goods_info {
+              height: 24rpx;
+              display: flex;
+              justify-content: center; }
+              page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList li .goods_info .price_info {
+                color: #FF3366;
+                margin-right: 20rpx; }
+              page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList li .goods_info .fav_num {
+                color: #999; }
+                page scroll-view .detail-tabpanel .panel-items .panel-item:nth-child(4) ul.proList li .goods_info .fav_num .icon {
+                  display: inline-block;
+                  background: url("http://s17.mogucdn.com/p1/160511/idid_ifrwgyjtgi2gmnbxhazdambqhayde_23x22.png") no-repeat;
+                  background-size: contain;
+                  width: 23rpx;
+                  height: 22rpx;
+                  margin-right: 7rpx;
+                  vertical-align: -1rpx; }
+  page .detail-footbar {
+    border-top: 2rpx solid #eee;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 116rpx;
+    z-index: 100 !important;
+    background: #fff;
+    display: flex; }
+    page .detail-footbar view {
+      flex: 1;
+      text-align: center;
+      line-height: 116rpx;
+      font-size: 25rpx; }
+      page .detail-footbar view.footbar-fav .iconfont, page .detail-footbar view.footbar-im .iconfont, page .detail-footbar view.footbar-shop .iconfont {
+        display: block;
+        margin: 0 auto;
+        width: 45rpx;
+        height: 50rpx;
+        margin-top: 15rpx;
+        background: url("../../images/detail.png") no-repeat 0 0;
+        background-size: 44rpx; }
+      page .detail-footbar view.footbar-fav span, page .detail-footbar view.footbar-im span, page .detail-footbar view.footbar-shop span {
+        display: block;
+        width: 100%;
+        height: 50rpx;
+        line-height: 40rpx;
+        color: #999; }
+      page .detail-footbar view.footbar-im .iconfont {
+        background-position: 0 -95rpx; }
+      page .detail-footbar view.footbar-shop .iconfont {
+        background-position: 0 -185rpx; }
+      page .detail-footbar view.footbar-buy {
+        flex: 3;
+        width: 376rpx;
+        display: flex; }
+        page .detail-footbar view.footbar-buy span {
+          flex: 1;
+          height: 116rpx;
+          line-height: 116rpx;
+          font-size: 32rpx; }
+          page .detail-footbar view.footbar-buy span.buy-cart {
+            color: #333;
+            background: #ffe817; }
+          page .detail-footbar view.footbar-buy span.buy-now {
+            color: #fff;
+            background: #f36; }
+  page .goTop {
+    background-image: url("http://s16.mogucdn.com/p2/160802/upload_529gk945b9hd96e38gh4el77f23e5_80x80.png");
+    background-size: 100%;
+    right: 20rpx;
+    width: 80rpx;
+    height: 80rpx;
+    background-size: contain;
+    position: fixed;
+    bottom: 140rpx;
+    z-index: 450; }
+  page .goCart {
+    background: url("../../images/detailCart.png") no-repeat 0 0;
+    background-size: 80rpx;
+    right: 20rpx;
+    width: 80rpx;
+    height: 80rpx;
+    position: fixed;
+    bottom: 260rpx;
+    z-index: 450; }
+    page .goCart i.cartNum {
+      width: 30rpx;
+      height: 30rpx;
+      line-height: 30rpx;
+      display: inline-block;
+      text-align: center;
+      font-size: 26rpx;
+      background-color: #f36;
+      color: #fff;
+      border-radius: 50%;
+      margin-left: 45rpx;
+      margin-top: 0; }
+  page .goods-sku {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999 !important; }
+    page .goods-sku .content {
+      width: 100%;
+      height: 676rpx;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      bottom: 0; }
+      page .goods-sku .content .sku-title {
+        display: flex;
+        position: relative;
+        top: 0;
+        padding: 30rpx 0;
+        line-height: 32rpx; }
+        page .goods-sku .content .sku-title image {
+          width: 140rpx;
+          height: 140rpx;
+          border: 2rpx solid #eee;
+          margin: 0 30rpx; }
+        page .goods-sku .content .sku-title .sku-title-desc {
+          width: 450rpx;
+          font-size: 24rpx;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden; }
+          page .goods-sku .content .sku-title .sku-title-desc .sku-title-text {
+            width: 100%;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden; }
+        page .goods-sku .content .sku-title .sku-title-price {
+          display: flex;
+          margin-top: 12rpx;
+          line-height: 28rpx; }
+          page .goods-sku .content .sku-title .sku-title-price span:nth-child(1) {
+            color: red; }
+          page .goods-sku .content .sku-title .sku-title-price span:nth-child(2) {
+            color: #999;
+            margin-left: 20rpx; }
+        page .goods-sku .content .sku-title .sku-title-addon {
+          font-size: 22rpx;
+          color: #999;
+          margin-top: 12rpx; }
+        page .goods-sku .content .sku-title .close {
+          position: absolute;
+          right: 20rpx;
+          top: 15rpx;
+          font-size: 68rpx;
+          color: #999;
+          font-weight: 100; }
+      page .goods-sku .content .scroll {
+        display: flex;
+        flex-direction: column;
+        height: 380rpx;
+        border-top: 2rpx solid #bbb;
+        border-bottom: 2rpx solid #bbb;
+        color: #333;
+        line-height: 52rpx;
+        padding: 0 30rpx;
+        margin: 0; }
+        page .goods-sku .content .scroll .sku-list {
+          display: flex;
+          flex-direction: column;
+          margin-top: 10rpx; }
+          page .goods-sku .content .scroll .sku-list dl {
+            display: flex;
+            flex-direction: column; }
+            page .goods-sku .content .scroll .sku-list dl dt {
+              font-size: 28rpx;
+              height: 52rpx; }
+            page .goods-sku .content .scroll .sku-list dl dd {
+              display: flex; }
+              page .goods-sku .content .scroll .sku-list dl dd text {
+                line-height: 52rpx;
+                padding: 0 30rpx;
+                border: 2rpx solid #bbb;
+                border-radius: 6rpx;
+                margin-right: 20rpx;
+                margin-bottom: 20rpx;
+                font-size: 24rpx; }
+                page .goods-sku .content .scroll .sku-list dl dd text.active {
+                  border-color: #FF3366;
+                  color: #FF3366; }
+        page .goods-sku .content .scroll .sku-num {
+          display: flex;
+          flex-direction: column;
+          margin-top: 10rpx;
+          padding-bottom: 20rpx; }
+          page .goods-sku .content .scroll .sku-num .title {
+            font-size: 28rpx;
+            height: 52rpx; }
+          page .goods-sku .content .scroll .sku-num .sku-counter {
+            display: flex; }
+            page .goods-sku .content .scroll .sku-num .sku-counter span {
+              padding: 0 20rpx;
+              line-height: 46rpx;
+              text-align: center;
+              font-size: 32rpx;
+              -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+              border: 2rpx solid #bbb;
+              border-radius: 6rpx; }
+              page .goods-sku .content .scroll .sku-num .sku-counter span.num-reduce {
+                border-top-right-radius: 0rpx;
+                border-bottom-right-radius: 0rpx; }
+              page .goods-sku .content .scroll .sku-num .sku-counter span.num-input {
+                border-left: 0;
+                border-right: 0;
+                border-radius: 0rpx; }
+              page .goods-sku .content .scroll .sku-num .sku-counter span.num-add {
+                color: #ed4566;
+                border-top-left-radius: 0rpx;
+                border-bottom-left-radius: 0rpx; }
+      page .goods-sku .content .action {
+        height: 92rpx; }
+        page .goods-sku .content .action .addCart {
+          background: #FF3366;
+          color: #fff;
+          height: 68rpx;
+          line-height: 68rpx;
+          margin: 12rpx auto;
+          width: 225rpx;
+          font-size: 28rpx;
+          font-family: "黑体"; }

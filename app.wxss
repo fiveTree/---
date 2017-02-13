@@ -1,0 +1,13 @@
+/**app.wxss**/
+.container {
+  width:100%;
+  
+} 
+view{
+  font-family: "微软雅黑";
+ 
+}
+image{
+  width:100%;
+}
+/*proList模块样式*/
